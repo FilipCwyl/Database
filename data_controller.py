@@ -26,11 +26,11 @@ def show_data_by_id(id_):
 
 
 def select():
-    sp.call('clear', shell=True)
+    sp.call("clear", shell=True)
     sel = input("1. Add data\n2.Show Data\n3.Search\n4.Update\n5.Delete\n6.Exit\n\n")
 
     if sel == '1':
-        sp.call('clear', shell=True)
+        sp.call("clear", shell=True)
         id_input = input('id: ')
         if not id_input.isdigit():
             input("\n\nWrong data type. ID must be integer. Please try again")

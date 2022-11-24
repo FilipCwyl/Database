@@ -1,5 +1,5 @@
 import sqlite3
-from data_controller import *
+
 
 def create_table():
     conn = sqlite3.connect('testdb2.sqlite')
