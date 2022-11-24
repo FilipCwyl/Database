@@ -5,7 +5,5 @@ from database_action import *
 from data_controller import *
 
 
-
-
 while (select()):
     pass

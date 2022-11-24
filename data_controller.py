@@ -1,4 +1,5 @@
 import subprocess as sp
+import menu_option
 from database_action import *
 
 create_table()
@@ -26,29 +27,29 @@ def show_data_by_id(id_):
 
 
 def select():
-    sp.call("clear", shell=True)
-    sel = input("1. Add data\n2.Show Data\n3.Search\n4.Update\n5.Delete\n6.Exit\n\n")
+    subprocess_clear_command()
+    sel = input("1.Add data\n2.Show Data\n3.Search\n4.Update\n5.Delete\n6.Exit\n\n")
 
-    if sel == '1':
-        sp.call("clear", shell=True)
+    if sel == menu_option.OPTION_1:
+        subprocess_clear_command()
         id_input = input('id: ')
         if not id_input.isdigit():
             input("\n\nWrong data type. ID must be integer. Please try again")
             return 1;
         name = input('Name: ')
         phone = input('phone: ')
-        add_data(id, name, phone)
-    elif sel == '2':
-        sp.call('clear', shell=True)
+        add_data(id_input, name, phone)
+    elif sel == menu_option.OPTION_2:
+        subprocess_clear_command()
         show_data()
         input("\n\npress enter to back:")
-    elif sel == '3':
-        sp.call('clear', shell=True)
+    elif sel == menu_option.OPTION_3:
+        subprocess_clear_command()
         id__ = int(input('Enter Id: '))
         show_data_by_id(id__)
         input("\n\npress enter to back:")
-    elif sel == '4':
-        sp.call('clear', shell=True)
+    elif sel == menu_option.OPTION_4:
+        subprocess_clear_command()
         id__ = int(input('Enter Id: '))
         show_data_by_id(id__)
         print()
@@ -56,8 +57,8 @@ def select():
         phone = input('phone: ')
         update_user(id__, name, phone)
         input("\n\nYour data has been updated \npress enter to back:")
-    elif sel == '5':
-        sp.call('clear', shell=True)
+    elif sel == menu_option.OPTION_5:
+        subprocess_clear_command()
         id__ = int(input('Enter Id: '))
         show_data_by_id(id__)
         delete_user(id__)
@@ -65,3 +66,6 @@ def select():
     else:
         return 0;
     return 1;
+
+def subprocess_clear_command():
+	sp.call('cls', shell=True)

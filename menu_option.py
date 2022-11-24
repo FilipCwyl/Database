@@ -1,0 +1,5 @@
+OPTION_1 = '1'
+OPTION_2 = '2'
+OPTION_3 = '3'
+OPTION_4 = '4'
+OPTION_5 = '5'
